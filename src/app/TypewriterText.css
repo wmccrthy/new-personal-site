@@ -1,0 +1,35 @@
+.terminal {
+    /* font-family: "Courier New", Courier, monospace; */
+    /* font-size: 1.2rem; */
+    color: #ffffff; /* White text */
+    white-space: pre-wrap; /* Preserve spaces and line breaks */
+    overflow: hidden;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.header {
+    font-size: 60px;
+} 
+
+.paragraph {
+    font-size: 18px;
+}
+
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    margin-left: 2px;
+    color: #ffffff; /* White cursor */
+  }
+  
+  .blinking {
+    animation: blink 1s steps(2, start) infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
