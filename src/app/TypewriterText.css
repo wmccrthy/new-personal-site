@@ -16,20 +16,27 @@
     font-size: 18px;
 }
 
-  .cursor {
-    display: inline-block;
-    width: 2px;
-    margin-left: 2px;
-    color: #ffffff; /* White cursor */
+.cursor {
+  display: inline-block;
+  width: 1px;
+  margin-left: 2px;
+  color: #ffffff; /* White cursor */
+}
+
+.blinking {
+  animation: smoothBlink 1s infinite;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+@keyframes smoothBlink {
+  0%, 100% {
+    opacity: 1;
   }
-  
-  .blinking {
-    animation: blink 1s steps(2, start) infinite;
+  50% {
+    opacity: 0;
   }
-  
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
+}
   
