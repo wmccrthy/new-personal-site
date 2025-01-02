@@ -26,7 +26,7 @@ export default function About() {
 
                     {/* Skills Icons */}
                     <div className="flex flex-wrap items-center justify-center align-middle content-center gap-6 mt-10">
-                        <h3 className="font-bold">Familiar With</h3>
+                        <h3 className="font-bold">I've Worked With</h3>
                         <FontAwesomeIcon icon={faPython} size="xl" className="text-blue-600" />
                         <FontAwesomeIcon icon={faJsSquare} size="xl" className="text-yellow-500" />
                         <FontAwesomeIcon icon={faJava} size="xl" className="text-cyan-500" />

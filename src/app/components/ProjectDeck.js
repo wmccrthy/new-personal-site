@@ -26,7 +26,7 @@ export default function ProjectDeck({ projects }) {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center align-middle content-center w-4/5 h-full">
+        <div className="flex flex-col items-center justify-center align-middle content-center w-3/5 h-5/6">
             {/* Arrow Buttons and Project Display */}
             <div className="flex items-center justify-center w-full gap-4 h-full">
                 {/* Left Arrow */}
@@ -43,12 +43,12 @@ export default function ProjectDeck({ projects }) {
                     <AnimatePresence>
                         <motion.div
                             key={projects[index].title} // Unique key for AnimatePresence
-                            initial={{ x: -startX * 150, opacity: 0 }} // Dynamic initial position
-                            animate={{ x: 0, opacity: 1 }} // End at center
-                            exit={{ x: -startX * 200, opacity: 0, position: 'absolute', scale: 0.5}} // Exit in opposite direction
+                            initial={{ x: -startX * 150, opacity: 0, pointerEvents: "none"}} // Dynamic initial position
+                            animate={{ x: 0, opacity: 1, pointerEvents: "all"}} // End at center
+                            exit={{ opacity: 0, position: 'absolute', scale: 0.5}} // Exit in opposite direction
                             transition={{
                                 // x: { type: "spring", stiffness: 175 },
-                                opacity: { duration: 0.2, ease: "easeInOut"}, // Quick opacity transition
+                                opacity: { duration: 0.3, ease: "easeInOut"}, // Quick opacity transition
                             }}
                             className="w-full h-full"
                         >
@@ -58,6 +58,7 @@ export default function ProjectDeck({ projects }) {
                                 icons={projects[index].icons}
                                 image = {projects[index].image}
                                 link = {projects[index].link}
+                                github = {projects[index].github}
                             />
                         </motion.div>
                     </AnimatePresence>
