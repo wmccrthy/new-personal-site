@@ -14,8 +14,6 @@ export default function TypewriterText({ text, typingSpeed = 120, isHeader = tru
         var currentIndex = 0;
         console.log(text)
 
-        
-
         const typeText = () => {
             if (currentIndex <= text.length) {
                 setDisplayedText(text.slice(0, currentIndex));

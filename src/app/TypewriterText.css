@@ -9,21 +9,23 @@
 }
 
 .header {
-    font-size: 60px;
+    font-size: 96px;
 } 
 
 .paragraph {
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .cursor {
-  display: inline-block;
+  display: inline-flex;
+  max-width: 1px;
   width: 1px;
   margin-left: 2px;
   color: #ffffff; /* White cursor */
 }
 
 .blinking {
+  width: 1px;
   animation: smoothBlink 1s infinite;
 }
 
