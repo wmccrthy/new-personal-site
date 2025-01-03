@@ -105,7 +105,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="flex flex-col md:flex-row gap-12 mx-auto w-11/12 max-w-5xl border border-gray-800 bg-black hover:border-sky-500 shadow-lg rounded-xl p-8 transition-all hover:scale-105 duration-300 h-full md:h-2/3 overflow-scroll align-middle md:items-center"
+            className="flex flex-col md:flex-row gap-12 mx-auto w-11/12 max-w-5xl border border-gray-800 bg-black hover:border-sky-500 shadow-lg rounded-xl p-8 transition-all md:hover:scale-105 duration-300 h-full md:h-2/3 overflow-scroll align-middle md:items-center"
         >
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center items-start">
