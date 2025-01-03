@@ -26,13 +26,13 @@ export default function ProjectDeck({ projects }) {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center align-middle content-center w-full md:w-3/5 h-5/6 transition-transform hover:scale-105 m-4">
+        <div className="flex flex-col items-center justify-center align-middle content-center w-11/12 md:w-3/5 h-5/6 transition-transform hover:scale-105 m-4">
             {/* Arrow Buttons and Project Display */}
-            <div className="flex items-center justify-center w-full gap-4 h-full">
+            <div className="flex items-center justify-center w-full gap-3 h-full">
                 {/* Left Arrow */}
                 <button
                     onClick={handleLeft}
-                    className="p-2 rounded-full shadow scale-125 hover:scale-150"
+                    className="p-1 rounded-full shadow scale-125 hover:scale-150"
                     aria-label="Previous Project"
                 >
                     ←
@@ -70,7 +70,7 @@ export default function ProjectDeck({ projects }) {
                 {/* Right Arrow */}
                 <button
                     onClick={handleRight}
-                    className="p-2 rounded-full shadow scale-125 hover:scale-150"
+                    className="p-1 rounded-full shadow scale-125 hover:scale-150"
                     aria-label="Next Project"
                 >
                     →
