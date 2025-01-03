@@ -26,7 +26,7 @@ export default function ProjectDeck({ projects }) {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center align-middle content-center w-3/5 h-5/6 transition-transform hover:scale-105 m-4">
+        <div className="flex flex-col items-center justify-center align-middle content-center w-full md:w-3/5 h-5/6 transition-transform hover:scale-105 m-4">
             {/* Arrow Buttons and Project Display */}
             <div className="flex items-center justify-center w-full gap-4 h-full">
                 {/* Left Arrow */}

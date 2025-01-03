@@ -15,11 +15,13 @@ import { faJava, faRProject } from "@fortawesome/free-brands-svg-icons"; // Java
 
 export default function Home() {
   const [activePage, setActivePage] = useState(<Intro></Intro>)
+  const [menuOpen, setMenuOpen] = useState(false); // Tracks the state of the mobile menu
 
   const handleInput = (element) => {
     setActivePage(element);
+    setMenuOpen(false); // Close menu after selecting a page
     return;
-  }
+  };
 
   const projects = [
     {
@@ -79,12 +81,11 @@ export default function Home() {
     },
   ];
 
-
   return (
-    <div className="flex flex-col justify-center align-middle content-center items-center overflow-y-scroll">
+    <div className="h-[100vh] flex flex-col justify-evenly align-middle content-center items-center">
 
       {/* NavBar */}
-      <div className="flex justify-between content-between align-middle w-11/12 h-fit m-4 p-4 font-extralight">
+      <div className="flex justify-between content-between align-middle w-11/12 h-fit p-4 pb-0 mb-2 font-extralight">
         <div className="flex gap-4 h-full">
           {/* logo/links */}
           <a className="h-8 w-8 cursor-pointer hover:text-blue-700 transition-transform hover:scale-110" href="https://www.linkedin.com/in/wyatt-mccarthy-134997209/">
@@ -94,7 +95,7 @@ export default function Home() {
             <FontAwesomeIcon icon={faGithub} size="2xl" />
           </a>
         </div>
-        <div className="flex gap-8 align-middle justify-center text-lg content-between w-1/5">
+        <div className="md:!flex w-0 gap-8 align-middle justify-center text-lg content-between md:w-1/5 overflow-auto">
           {/* pages */}
           <a className="w-1/3 cursor-pointer text-center items-center align-middle justify-center content-center hover:scale-110 transition-transform" onClick={() => handleInput(<Intro></Intro>)}>
             Home
@@ -106,9 +107,39 @@ export default function Home() {
             Projects
           </a>
         </div>
+        {/* Hamburger Menu for Mobile */}
+        <div className="md:hidden">
+          <button
+            className="text-white hover:text-sky-500 focus:outline-none"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span className="text-2xl">&#9776;</span> {/* Hamburger Icon */}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="absolute inset-0 bg-black text-white flex flex-col items-center justify-center z-50">
+            <button
+              className="absolute top-4 right-4 text-3xl hover:text-sky-500 focus:outline-none"
+              onClick={() => setMenuOpen(false)}
+            >
+              &times; {/* Close Icon */}
+            </button>
+            <a className="py-4 text-2xl hover:scale-110 transition-transform" onClick={() => handleInput(<Intro></Intro>)}>
+              Home
+            </a>
+            <a className="py-4 text-2xl hover:scale-110 transition-transform" onClick={() => handleInput(<About></About>)}>
+              About
+            </a>
+            <a className="py-4 text-2xl hover:scale-110 transition-transform" onClick={() => handleInput(<ProjectDeck projects={projects}></ProjectDeck>)}>
+              Projects
+            </a>
+          </div>
+        )}
       </div>
 
-      <div className="flex flex-col w-2/3 items-center content-center justify-center align-middle h-[85vh]">
+      <div className="flex flex-col md:w-2/3 w-full items-center content-center justify-center align-middle flex-grow md:h-[85vh] pb-4">
         {activePage}
         {/* toggle different pages within this div based on the navbar input */}
       </div>

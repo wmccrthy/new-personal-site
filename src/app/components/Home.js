@@ -2,7 +2,7 @@ import TypewriterText from "./TypewriterText";
 
 export default function Intro() {
     return (
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full h-full flex flex-col items-center align-middle content-center justify-center">
             <TypewriterText text="Hi, I'm Wyatt"></TypewriterText>
             <TypewriterText text="Amherst College 2025E', Software Engineer, Athlete" typingSpeed={50} isHeader={false} keepBlinking={true} delay={2000}></TypewriterText>
         </div>
