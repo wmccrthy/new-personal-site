@@ -56,7 +56,7 @@ export default function ProjectCard({ image, title, caption, icons, link, github
                 </p>
 
                 {/* Skills Icons */}
-                <div className="flex flex-wrap items-center justify-center align-middle content-center gap-6 mt-4">
+                <div className="flex flex-wrap items-center justify-center align-middle content-center gap-6 mt-2">
                     <h3 className="font-semibold">Skills and Tools:</h3>
                     {/* <h3 className="font-bold">Worked With</h3> */}
                     {
