@@ -114,14 +114,14 @@ export default function About() {
                 </h1>
                 <p className="text-lg font-extralight leading-relaxed text-gray-300">
                     Hello! I'm Wyatt, a passionate developer with experience in full-stack
-                    development, data visualization, and 3D rendering. I love solving
+                    development and data engineering. I love solving
                     complex problems and building tools that make a difference. I recently graduated from Amherst College with a B.A. in Computer Science. During my time at Amherst, I pursued extensive coursework in Economics and Math alongside my major. I was also a proud member of the men’s varsity soccer team, having played the sport since I was a toddler. I will be taking the skills I've acquired throughout college to Roblox, where I start work as a Software Engineer in early 2025.
                 </p>
 
                 {/* Skills */}
                 <div className="mt-8">
                     <h3 className="text-xl font-semibold text-gray-400 mb-4">
-                        Skills & Tools
+                        I've Worked With
                     </h3>
                     <div className="flex flex-wrap gap-4">
                         <FontAwesomeIcon icon={faPython} size="2x" className="text-blue-600 hover:scale-110 transition-transform" />

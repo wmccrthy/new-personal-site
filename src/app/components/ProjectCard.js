@@ -10,6 +10,19 @@ import { SiCplusplus, SiPostgresql } from "react-icons/si"; // C++ and PostgreSQ
 export default function ProjectCard({ image, title, caption, icons, link, github, cpp = false, psql = false, torch = false }) {
     console.log(image)
     const [isAnimating, setIsAnimating] = useState(true); // Tracks animation state
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setMousePosition({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+        });
+    };
+
+    const gradientStyle = {
+        background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(56, 189, 248, 0.1), rgba(0, 0, 0, 0) 100%)`,
+    };
 
     useEffect(() => { // on render, set isAnimating false after .3s delay
         setTimeout(() => {
@@ -19,7 +32,13 @@ export default function ProjectCard({ image, title, caption, icons, link, github
 
 
     return (
-        <a className={`cursor-default flex flex-col w-full h-full border border-gray-800 bg-black hover:border-sky-500 shadow-lg rounded-xl transition-all duration-300 ease-in-out ${isAnimating ? "pointer-events-none" : "pointer-events-auto"}`} href={link}>
+        <a onMouseMove={handleMouseMove} className={`cursor-default flex flex-col w-full h-full border border-gray-800 bg-black hover:border-sky-500 shadow-lg rounded-xl transition-all duration-300 ease-in-out ${isAnimating ? "pointer-events-none" : "pointer-events-auto"}`} href={link}>
+            {/* Border Effect */}
+            <div
+                className="absolute inset-4 rounded-xl pointer-events-none"
+                style={gradientStyle}
+            ></div>
+
             {/* Image Section */}
             <div className="h-1/2 flex w-full">
                 <img src={image} alt="Project image" className="object-cover w-full h-full rounded-t-xl" />
