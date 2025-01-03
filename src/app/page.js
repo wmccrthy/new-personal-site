@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col w-2/3 items-center content-center justify-center align-middle h-[80vh]">
+      <div className="flex flex-col w-2/3 items-center content-center justify-center align-middle h-[85vh]">
         {activePage}
         {/* toggle different pages within this div based on the navbar input */}
       </div>
